@@ -24,8 +24,8 @@ function displayFinished() {
 }
 
 function displayMessage() {
-    message = ["EAGLE!!", "Good Job!", "PATHETIC"]
-    pictures = [""]
+    message = ["Eagle!!", "Good Job!", "pathetic!"]
+    pictures = ["assets/images/zeke.jpg", "assets/images/cowboys.jpg", "assets/images/eagles.jpg"]
 
     if (correct === 5) {
         $("#message").text(message[0]);

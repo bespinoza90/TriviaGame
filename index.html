@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <title>Trivia Game</title>
+</head>
+
+<body>
+
+
+    <div class="container">
+
+        <h1 id="title">Scrubs Trivia!!
+        </h1>
+        <div id="start-screen">
+            <p class="questions"> Press the Start Quiz button to start the test!</p>
+            <p class="questions">You will have 1 minute to answer 5 trivia questions about the Tv Show Scrubs!</p>
+            <p class="questions">Good Luck!!</p>
+            <input id="start-button" type="button" value="Start Quiz">
+        </div>
+        <div id="quiz">
+            <h1 id="timer"></h1>
+            <form id="trivia" name="trivia">
+
+
+                <div id="radio">
+                    <p class="questions">Who is the main character on 'Scrubs'?</p>
+                    <input type="radio" class="q" name="question1" value="answer">Dr. John "J.D." Dorian
+                    <input type="radio" class="q" name="question1" value="wrong">Turkleton
+                    <input type="radio" class="q" name="question1" value="wrong">Dr. Jan Itor
+
+                    <p class="questions">What hospital is 'Scrubs' set in?</p>
+                    <input type="radio" class="q" name="question2" value="wrong">Sacred Fart
+                    <input type="radio" class="q" name="question2" value="answer">Sacred Heart
+                    <input type="radio" class="q" name="question2" value="wrong">Sacred St. Josephs
+
+                    <p class="questions">What is the name of Ted's acapella band?</p>
+                    <input type="radio" class="q" name="question3" value="wrong">Lovin' Touchin' Squeezes
+                    <input type="radio" class="q" name="question3" value="answer">The Worthless Peons
+                    <input type="radio" class="q" name="question3" value="wrong">Cool Cats
+
+                    <p class="questions">What was in the Pancake Drawer?</p>
+                    <input type="radio" class="q" name="question4" value="wrong">Pancakes
+                    <input type="radio" class="q" name="question4" value="answer">Silverware
+                    <input type="radio" class="q" name="question4" value="wrong">Unmentionables
+
+                    <p class="questions">Hugh Jackman is hated by which Doctor?</p>
+                    <input type="radio" class="q" name="question5" value="wrong">Dr. Kelso
+                    <input type="radio" class="q" name="question5" value="wrong">Dr. Turk
+                    <input type="radio" class="q" name="question5" value="answer">Dr. Cox
+                    <br>
+                    <br>
+                    <input id="button" type="button" value="Submit">
+                </div>
+            </form>
+        </div>
+
+        <div id="finished">
+            <p class="questions">Number of Answers Correct: <span id="correct"></span></p>
+            <p class="questions">Number of Answers Wrong: <span id="wrong"></span></p>
+            <br>
+            <br>
+            <p id="message" class="questions"></p>
+            <img id="image">
+        </div>
+
+
+
+    </div>
+
+
+
+
+
+
+    <script src="assets/javascript/app.js"></script>
+</body>
+
+</html>
