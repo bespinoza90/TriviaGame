@@ -39,8 +39,8 @@ function displayFinished() {
 }
 
 function displayMessage() {
-    message = ["Eagle!!", "Nice Try! Have an Apple Martini!", "pathetic!"]
-    pictures = ["assets/images/the-todd.jpg", ""]
+    message = ["Eagle!!", "Nice Try! Have an Apple Martini!", "Wrong, Wrong, Wrong...Wrong, Wrong, Wrong. You're Wrong!"]
+    pictures = ["assets/images/the-todd.jpg", "assets/images/martini.jpg", "assets/images/perry-cox.jpg"]
 
     if (correct === 5) {
         $("#message").text(message[0]);
