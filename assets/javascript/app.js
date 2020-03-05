@@ -3,15 +3,30 @@ var filtered;
 var correct = 0;
 var wrong = 0;
 var timer;
-var counter = 0;
+var counter = 60;
 var timeLeft = 60;
 var message = [];
 var pictures = [];
 
+// var questions = [
+//     {
+//         q: "test1",
+//         res: ["a", "b", "c"],
+//         a: 1
+//     },
+//     {
+//         q: "test2",
+//         res: ["1", "2", "3"],
+//         a: 2
+//     },
+// ]
 
 correctText = $("#correct");
 wrongText = $("#wrong");
 unansweredText = $("#not-answered");
+
+$("#finished").css("visibility", "hidden");
+$("#quiz").css("visibility", "hidden");
 
 function displayFinished() {
     $("#finished").css({
@@ -24,8 +39,8 @@ function displayFinished() {
 }
 
 function displayMessage() {
-    message = ["Eagle!!", "Good Job!", "pathetic!"]
-    pictures = ["assets/images/zeke.jpg", "assets/images/cowboys.jpg", "assets/images/eagles.jpg"]
+    message = ["Eagle!!", "Nice Try! Have an Apple Martini!", "pathetic!"]
+    pictures = ["assets/images/the-todd.jpg", ""]
 
     if (correct === 5) {
         $("#message").text(message[0]);
@@ -51,10 +66,10 @@ function startTime() {
     timer.text("1:00");
 
     function timeIt() {
-        counter++;
-        timer.text(timeLeft - counter);
-
-        if (counter == timeLeft) {
+        counter--;
+        timer.text(counter);
+        //  console.log(timeLeft, counter)
+        if (counter === 0) {
             console.log("out of time")
             clearInterval();
             displayFinished();
@@ -63,11 +78,28 @@ function startTime() {
     setInterval(timeIt, 1000)
 }
 
+// function showQuestions() {
+
+//     for (var i = 0; i < questions.length; i++) {
+
+//         $("#radio").append(`<p class="questions">${questions[i].q}</p>`)
+
+//         for (var j = 0; j < questions[i].res.length; j++) {
+//             console.log(questions[i].res[j])
+//             $("#radio").append(`<input type="radio" class="q" name="question${i}" value=${questions[i].a}>${questions[i].res[j]}`)
+//         }
+//         //     `<input type="radio" class="q" name="question1" value="wrong">Turkleton`
+//         //     `<input type="radio" class="q" name="question1" value="wrong">Dr. Jan Itor`
+//     }
+//     $("#radio").append(`<input id="button" type="button" value="Submit">`)
+    
+// }
 
 
 $("#start-button").on("click", function () {
     $("#start-button").css("visibility", "hidden");
     $("#start-screen").css("visibility", "hidden");
+    $("#finished").css("visibility", "hidden");
     $("#title").css("visibility", "hidden");
     $("#quiz").css({
         "visibility": "visible", "position": "absolute",
@@ -76,6 +108,7 @@ $("#start-button").on("click", function () {
 
 
     startTime();
+    //showQuestions()
 });
 
 
